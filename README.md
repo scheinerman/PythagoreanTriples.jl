@@ -9,6 +9,7 @@ with the additional property that `a<b`.
 
 ## Construction
 
+### Three-parameter consruction
 A Pythagorean triple can be constructed simply by specifying the lengths of the legs
 and hypotenuse of a right triangle
 
@@ -19,13 +20,23 @@ julia> T = PythagoreanTriple(4,3,5)
 PythagoreanTriple(3, 4, 5)
 ```
 
-If the three arguments are invalid, an error is thrown:
+If the three integers are not the side lengths of a right triangle, an error is thrown:
 ```
 julia> T = PythagoreanTriple(4,5,6)
 ERROR: (4, 5, 6) does not define a Pythagorean triple
 ```
 
+In addition, the three side lengths can be given as a tuple:
+```
+julia> abc = (4,3,5)
+(4, 3, 5)
 
+julia> PythagoreanTriple(abc)
+PythagoreanTriple(3, 4, 5)
+```
+
+
+### Two-parameter construction
 
 Every Pythagorean triple can be created from a pair of integers `u,v` in which the 
 legs of the right triangle are `abs(u^2 - v^2)` and `abs(2*u*v)`, and the hypotenuse is
@@ -77,7 +88,7 @@ julia> for t in TripleGenerator()
 PythagoreanTriple(1007, 1224, 1585)
 ```
 
-Note: The function `is_primitive` is available to see if a Pythagorean triple
+Note: The function `is_primitive` is available to check if a Pythagorean triple
 is primitive:
 ```
 julia> t = PythagoreanTriple(3,4,5)
@@ -150,7 +161,7 @@ julia> sort(list)
  PythagoreanTriple(33, 56, 65)
  ```
 
-## To do
+## To do list
 
-* It may be useful to create a function that takes a Pythagorean triple 
-and returns  integers `u` and `v` that would generate it. 
+* Create a function that takes a Pythagorean triple `T`
+and returns  integers `u` and `v` such that `T == PythagoreanTriple(u,v)`.

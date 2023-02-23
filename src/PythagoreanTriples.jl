@@ -40,6 +40,9 @@ struct PythagoreanTriple
     end
 end
 
+PythagoreanTriple(abc::NTuple{3,Int}) = PythagoreanTriple(abc...)
+PythagoreanTriple(uv::NTuple{2,Int}) = PythagoreanTriple(uv...)
+
 """
     make_tuple(abc::PythagoreanTriple)::NTuple{3,Int}
 
