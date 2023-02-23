@@ -1,0 +1,7 @@
+name = "PythagoreanTriples"
+uuid = "cf5fe419-f069-44d7-b983-50e7569e004e"
+authors = ["Ed Scheinerman <ers@jhu.edu>"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
