@@ -28,7 +28,7 @@ ERROR: (4, 5, 6) does not define a Pythagorean triple
 
 
 Every Pythagorean triple can be created from a pair of integers `u,v` in which the 
-legs of the right triangle are `abs(u^2 - v^2)` and `2*u*v`, and the hypotenuse is
+legs of the right triangle are `abs(u^2 - v^2)` and `abs(2*u*v)`, and the hypotenuse is
 `u^2 + v^2`. 
 
 A user can give the values `u` and `v` to create a Pythagorean triple:
@@ -37,10 +37,19 @@ julia> T = PythagoreanTriple(2,5)
 PythagoreanTriple(20, 21, 29)
 ```
 
+Note that the integers `u` and `v` must be distinct and nonzero:
+```
+julia> PythagoreanTriple(0,5)
+ERROR: (0, 5) does not yield a PythagoreanTriple
+
+julia> PythagoreanTriple(2,2)
+ERROR: (2, 2) does not yield a PythagoreanTriple
+```
+
 ## Generation
 
-We call a Pythagorean triple `(a,b,c)` primitive provided `gcd(a,b) == 1`. Thus `(3,4,5)` is
-primitive but `(6,8,10)` is not. 
+We call a Pythagorean triple `(a,b,c)` *primitive* provided `gcd(a,b) == 1`. 
+Thus `(3,4,5)` is primitive but `(6,8,10)` is not. 
 
 Use `TripleGenerator` to create an iterator for primitive Pythagorean triples. The
 iterator `TripleGenerator(n)` will create `n` primitive triples:
