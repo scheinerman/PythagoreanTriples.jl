@@ -20,9 +20,22 @@ end
     end
 end
 
-@testset "Is primitive?" begin
+@testset "Primitive" begin
     t = PythagoreanTriple(3,4,5)
     @test is_primitive(t)
     t = PythagoreanTriple(30,40,50)
     @test !is_primitive(t)
+    t = make_primitive(t)
+    @test is_primitive(t)
+end
+
+@testset "Sort" begin
+    nt = 10
+    list = [t for t in TripleGenerator(nt)]
+    list = sort(list)
+    front = list[1:nt-1]
+    back = list[2:nt]
+    checks = front .< back
+    @test all(checks)
+
 end

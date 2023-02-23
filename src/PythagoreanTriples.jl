@@ -1,6 +1,7 @@
 module PythagoreanTriples
 
-export PythagoreanTriple, is_primitive, make_tuple
+export PythagoreanTriple
+export is_primitive, make_tuple, make_primitive
 
 """
     PythagoreanTriple
@@ -53,9 +54,23 @@ Check if the `PythagoreanTriple` is primitive, i.e. that `a`
 and `b` are relatively prime
 """
 function is_primitive(abc::PythagoreanTriple)::Bool
-    return gcd(abc.a, abc.b) == 1
+    return gcd(make_tuple(abc)...) == 1
 end
 
+
+
+"""
+    make_primitive(t::PythagoreanTriple)::PythagoreanTriple
+
+If `t` is the Pythagorean triple `(a,b,c)`. Return the Pythagorean triple
+`(a/d, b/d, c/d)` where `d = gcd(a,b,c)`.
+"""
+function make_primitive(t::PythagoreanTriple)::PythagoreanTriple
+    abc = make_tuple(t)
+    d = gcd(abc...)
+    xyz = abc .÷ d 
+    return PythagoreanTriple(xyz...)
+end
 
 
 """
