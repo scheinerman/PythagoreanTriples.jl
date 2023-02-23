@@ -1,0 +1,2 @@
+# PythagoreanTriples.jl
+Pythagorean Triples
