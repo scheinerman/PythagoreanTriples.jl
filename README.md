@@ -105,9 +105,43 @@ julia> make_tuple(t)
 (96, 110, 146)
 ```
 
+## Sorting
+
+Pythagorean triples can be compared using the usual `<`, `<=`, `>`, `>=` relations. 
+Lists of triples can be sorted. They are sorted "reverse lexicographically". That is 
+when we check if `(a,b,c)` is less than or equal to `(aa,bb,cc)` we first see if `c ≤ cc`.
+If so, then if `b ≤ bb`. And if so, then if `a ≤ aa`. 
+
+```
+julia> list = [t for t in TripleGenerator(10)]
+10-element Vector{PythagoreanTriple}:
+ PythagoreanTriple(3, 4, 5)
+ PythagoreanTriple(5, 12, 13)
+ PythagoreanTriple(8, 15, 17)
+ PythagoreanTriple(7, 24, 25)
+ PythagoreanTriple(20, 21, 29)
+ PythagoreanTriple(9, 40, 41)
+ PythagoreanTriple(12, 35, 37)
+ PythagoreanTriple(11, 60, 61)
+ PythagoreanTriple(28, 45, 53)
+ PythagoreanTriple(33, 56, 65)
+
+julia> sort(list)
+10-element Vector{PythagoreanTriple}:
+ PythagoreanTriple(3, 4, 5)
+ PythagoreanTriple(5, 12, 13)
+ PythagoreanTriple(8, 15, 17)
+ PythagoreanTriple(7, 24, 25)
+ PythagoreanTriple(20, 21, 29)
+ PythagoreanTriple(12, 35, 37)
+ PythagoreanTriple(9, 40, 41)
+ PythagoreanTriple(28, 45, 53)
+ PythagoreanTriple(11, 60, 61)
+ PythagoreanTriple(33, 56, 65)
+ ```
+
+Pythagorean triples can be compared
 ## To do
 
 * It may be useful to create a function that takes a Pythagorean triple 
 and returns  integers `u` and `v` that would generate it. 
-* It may be useful to define an `isless` function for Pythagorean triples 
-so a list of them can be sorted. 

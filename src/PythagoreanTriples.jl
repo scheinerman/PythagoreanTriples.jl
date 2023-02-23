@@ -69,6 +69,13 @@ function PT_check(a::Int, b::Int, c::Int)::Bool
 end
 
 
+function Base.isless(t::PythagoreanTriple, s::PythagoreanTriple)::Bool
+    abc = make_tuple(t)
+    xyz = make_tuple(s)
+
+    return isless(reverse(abc), reverse(xyz))
+end
+
 include("PT_gen.jl")
 
 end # module PythagoreanTriples
