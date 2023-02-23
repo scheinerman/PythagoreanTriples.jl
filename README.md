@@ -93,6 +93,16 @@ julia> is_primitive(t)
 false
 ```
 
+The function `make_primitive` takes a Pythagorean triple and returns a new
+triple having divided the three numbers by their greatest common divisor.
+```
+julia> t = PythagoreanTriple(6,8,10)
+PythagoreanTriple(6, 8, 10)
+
+julia> make_primitive(t)
+PythagoreanTriple(3, 4, 5)
+```
+
 
 ## Extracting values
 
@@ -140,7 +150,6 @@ julia> sort(list)
  PythagoreanTriple(33, 56, 65)
  ```
 
-Pythagorean triples can be compared
 ## To do
 
 * It may be useful to create a function that takes a Pythagorean triple 
