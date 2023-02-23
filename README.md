@@ -77,6 +77,22 @@ julia> for t in TripleGenerator()
 PythagoreanTriple(1007, 1224, 1585)
 ```
 
+Note: The function `is_primitive` is available to see if a Pythagorean triple
+is primitive:
+```
+julia> t = PythagoreanTriple(3,4,5)
+PythagoreanTriple(3, 4, 5)
+
+julia> is_primitive(t)
+true
+
+julia> t = PythagoreanTriple(30,40,50)
+PythagoreanTriple(30, 40, 50)
+
+julia> is_primitive(t)
+false
+```
+
 
 ## Extracting values
 

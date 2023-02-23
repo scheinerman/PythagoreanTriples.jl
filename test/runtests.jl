@@ -19,3 +19,10 @@ end
         @test a*a + b*b == c*c 
     end
 end
+
+@testset "Is primitive?" begin
+    t = PythagoreanTriple(3,4,5)
+    @test is_primitive(t)
+    t = PythagoreanTriple(30,40,50)
+    @test !is_primitive(t)
+end
