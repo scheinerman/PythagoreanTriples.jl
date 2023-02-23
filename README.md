@@ -65,6 +65,18 @@ PythagoreanTriple(20, 21, 29)
 ```
 
 If `n` is omitted (or negative) the iterator will produce values endlessly.
+For example:
+```
+julia> for t in TripleGenerator()
+           a,b,c = make_tuple(t)
+           if a > 1000
+               println(t)
+               break
+           end
+       end
+PythagoreanTriple(1007, 1224, 1585)
+```
+
 
 ## Extracting values
 
@@ -79,5 +91,7 @@ julia> make_tuple(t)
 
 ## To do
 
-It may be useful to create a function that take a Pythagorean triple 
+* It may be useful to create a function that takes a Pythagorean triple 
 and returns  integers `u` and `v` that would generate it. 
+* It may be useful to define an `isless` function for Pythagorean triples 
+so a list of them can be sorted. 
