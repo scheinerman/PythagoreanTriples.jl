@@ -131,7 +131,7 @@ PythagoreanTriple(1190, 1200, 1690)
 All primitive Pythagorean triples (and some, but not all, non-primitive triples)
 can be constructed using two parameters `p = PythagoreanTriple(u,v)`. 
 
-Given such a triple, the function `get_parameters` will return the `u` and `v` that
+Given such a triple, the function `get_parameters` will return a `u` and `v` that
 creates that triple.
 ```
 julia> p = PythagoreanTriple(5,12,13)
