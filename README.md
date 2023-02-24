@@ -9,7 +9,7 @@ with the additional property that `a<b`.
 
 ## Construction
 
-### Three-parameter consruction
+### Three-parameter construction
 A Pythagorean triple can be constructed simply by specifying the lengths of the legs
 and hypotenuse of a right triangle
 
