@@ -114,6 +114,18 @@ julia> make_primitive(t)
 PythagoreanTriple(3, 4, 5)
 ```
 
+### Scalar multiple
+
+Pythagorean triples can be multiplied (on the left) by a positive integer.
+For example:
+```
+julia> p = PythagoreanTriple(5,12)
+PythagoreanTriple(119, 120, 169)
+
+julia> 10p
+PythagoreanTriple(1190, 1200, 1690)
+```
+
 ### Finding parameters
 
 All primitive Pythagorean triples (and some, but not all, non-primitive triples)
@@ -195,6 +207,3 @@ julia> sort(list)
  PythagoreanTriple(33, 56, 65)
  ```
 
-## To do list
-
-* Scalar multiplication by positive integer.
