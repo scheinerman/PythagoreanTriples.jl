@@ -177,8 +177,8 @@ when we check if `(a,b,c)` is less than or equal to `(aa,bb,cc)` we first see if
 If so, then if `b ≤ bb`. And if so, then if `a ≤ aa`. 
 
 ```
-julia> list = [t for t in TripleGenerator(10)]
-10-element Vector{PythagoreanTriple}:
+julia> list = collect(TripleGenerator(10))
+10-element Vector{Any}:
  PythagoreanTriple(3, 4, 5)
  PythagoreanTriple(5, 12, 13)
  PythagoreanTriple(8, 15, 17)
@@ -191,7 +191,7 @@ julia> list = [t for t in TripleGenerator(10)]
  PythagoreanTriple(33, 56, 65)
 
 julia> sort(list)
-10-element Vector{PythagoreanTriple}:
+10-element Vector{Any}:
  PythagoreanTriple(3, 4, 5)
  PythagoreanTriple(5, 12, 13)
  PythagoreanTriple(8, 15, 17)
