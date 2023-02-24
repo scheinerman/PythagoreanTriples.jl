@@ -95,5 +95,6 @@ function Base.isless(t::PythagoreanTriple, s::PythagoreanTriple)::Bool
 end
 
 include("PT_gen.jl")
+include("invert.jl")
 
 end # module PythagoreanTriples

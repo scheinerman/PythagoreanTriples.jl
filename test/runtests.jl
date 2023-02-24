@@ -41,5 +41,14 @@ end
     back = list[2:nt]
     checks = front .< back
     @test all(checks)
+end
 
+@testset "Parameters" begin
+    p = PythagoreanTriple(5,12,13)
+    u,v = get_parameters(p)
+    @test p == PythagoreanTriple(u,v)
+
+    parms = (5,12)
+    p = PythagoreanTriple(parms...)
+    @test parms == get_parameters(p)
 end

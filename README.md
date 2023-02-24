@@ -114,6 +114,40 @@ julia> make_primitive(t)
 PythagoreanTriple(3, 4, 5)
 ```
 
+### Finding parameters
+
+All primitive Pythagorean triples (and some, but not all, non-primitive triples)
+can be constructed using two parameters `p = PythagoreanTriple(u,v)`. 
+
+Given such a triple, the function `get_parameters` will return the `u` and `v` that
+creates that triple.
+```
+julia> p = PythagoreanTriple(5,12,13)
+PythagoreanTriple(5, 12, 13)
+
+julia> u,v = get_parameters(p)
+(2, 3)
+
+julia> PythagoreanTriple(u,v)
+PythagoreanTriple(5, 12, 13)
+```
+
+While some non-primitive triples, such as `(6,8,10)`, can be created this way, others,
+such as `(30,40,50)` cannot:
+```
+julia> p = get_parameters(6,8,10)
+(1, 3)
+
+julia> get_parameters(6,8,10)
+(1, 3)
+
+julia> get_parameters(30,40,50)
+ERROR: Unable to find parameters for (30, 40, 50) (non-primitive)
+```
+
+
+
+
 
 ## Extracting values
 
@@ -163,5 +197,4 @@ julia> sort(list)
 
 ## To do list
 
-* Create a function that takes a Pythagorean triple `T`
-and returns  integers `u` and `v` such that `T == PythagoreanTriple(u,v)`.
+* Scalar multiplication by positive integer.
