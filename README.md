@@ -38,7 +38,7 @@ PythagoreanTriple(3, 4, 5)
 
 ### Two-parameter construction
 
-Every Pythagorean triple can be created from a pair of integers `u,v` in which the 
+Pythagorean triples can be created from a pair of integers `u,v` in which the 
 legs of the right triangle are `abs(u^2 - v^2)` and `abs(2*u*v)`, and the hypotenuse is
 `u^2 + v^2`. 
 
