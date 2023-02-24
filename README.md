@@ -145,7 +145,7 @@ PythagoreanTriple(5, 12, 13)
 ```
 
 While some non-primitive triples, such as `(6,8,10)`, can be created this way, others,
-such as `(30,40,50)` cannot:
+such as `(30,40,50)`, cannot:
 ```
 julia> p = get_parameters(6,8,10)
 (1, 3)
