@@ -150,9 +150,6 @@ such as `(30,40,50)` cannot:
 julia> p = get_parameters(6,8,10)
 (1, 3)
 
-julia> get_parameters(6,8,10)
-(1, 3)
-
 julia> get_parameters(30,40,50)
 ERROR: Unable to find parameters for (30, 40, 50) (non-primitive)
 ```
