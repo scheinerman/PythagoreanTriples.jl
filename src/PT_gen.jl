@@ -35,13 +35,13 @@ function Base.iterate(TG::TripleGenerator, state::Tuple{Int,Int,Int})
         return Base.iterate(TG, (0, v + 1, n))
     end
 
-    triple = PythagoreanTriple(u,v)
-    
-    if gcd(triple.a, triple.b) > 1 
-        return Base.iterate(TG, (u, v, n))     
+    triple = PythagoreanTriple(u, v)
+
+    if gcd(triple.a, triple.b) > 1
+        return Base.iterate(TG, (u, v, n))
     end
 
-    return triple, (u, v, n+1)
+    return triple, (u, v, n + 1)
 
 end
 

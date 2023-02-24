@@ -71,7 +71,7 @@ If `t` is the Pythagorean triple `(a,b,c)`. Return the Pythagorean triple
 function make_primitive(t::PythagoreanTriple)::PythagoreanTriple
     abc = make_tuple(t)
     d = gcd(abc...)
-    xyz = abc .÷ d 
+    xyz = abc .÷ d
     return PythagoreanTriple(xyz...)
 end
 
@@ -96,5 +96,6 @@ end
 
 include("PT_gen.jl")
 include("invert.jl")
+include("scalar_mult.jl")
 
 end # module PythagoreanTriples

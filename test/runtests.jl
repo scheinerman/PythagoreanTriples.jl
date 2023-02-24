@@ -44,11 +44,17 @@ end
 end
 
 @testset "Parameters" begin
-    p = PythagoreanTriple(5,12,13)
-    u,v = get_parameters(p)
-    @test p == PythagoreanTriple(u,v)
+    p = PythagoreanTriple(5, 12, 13)
+    u, v = get_parameters(p)
+    @test p == PythagoreanTriple(u, v)
 
-    parms = (5,12)
+    parms = (5, 12)
     p = PythagoreanTriple(parms...)
     @test parms == get_parameters(p)
+end
+
+@testset "Scalar multiply" begin
+    p = PythagoreanTriple(3, 4, 5)
+    q = PythagoreanTriple(30, 40, 50)
+    @test 10p == q
 end
