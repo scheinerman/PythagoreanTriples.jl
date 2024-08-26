@@ -7,12 +7,8 @@ in the `extras` folder contains code to create an `RPT` type (which stands
 for *Rational Pythagorean Triple*). 
 
 An `RPT` can be created as follows:
-* If `p` is a `PythagoreanTriple` (or another `RPT`), 
-then `RPT(p,factor=1)` creates a copy of `p` 
-in which the three values are scaled by `p`. This can also be accomplished 
-as `factor*p` if `p` is an `RPT`.
-* Given three rational numbers (or integers), `RPT(x,y,z)` creates an `RPT` 
-with those three values. 
+* If `p` is a `PythagoreanTriple` (or another `RPT`), then `RPT(p,factor=1)` creates a copy of `p`  in which the three values are scaled by `p`. This can also be accomplished  as `factor*p` if `p` is an `RPT`.
+* Given three rational numbers (or integers), `RPT(x,y,z)` creates an `RPT`  with those three values. 
 
 ```
 julia> include("extras/RPT.jl");
