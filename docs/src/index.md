@@ -1,4 +1,4 @@
-# `PythagoreanTriples`
+# PythagoreanTriples
  
 A Pythagorean Triple is a list of three positive integers $(a,b,c)$ 
 with the property that $a^2 + b^2 = c^2$. That is, they are integers that are the lengths
